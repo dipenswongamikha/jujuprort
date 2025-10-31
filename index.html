@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="JUJU Intelligence - AI-Powered Market Intelligence for Elite Investors">
+  <title>JUJU | Premium Market Intelligence</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #0f0f13;
+      color: #e6e6ff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2a2a3c;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 15, 19, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #8a2be2, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #b0b0d0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00c6ff;
+    }
+    .hero {
+      text-align: center;
+      padding: 6rem 5% 4rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ffffff, #a0a0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #b0b0d0;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #8a2be2, #00c6ff);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+    }
+    section {
+      padding: 4rem 5%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .reports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .report-card {
+      background: #1a1a25;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #2d2d44;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .report-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    .report-card h3 {
+      margin-bottom: 0.8rem;
+      color: #00c6ff;
+    }
+    .pricing {
+      background: #151520;
+      text-align: center;
+      padding: 4rem 5%;
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #8a2be2, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 1.5rem 0;
+    }
+    .contact {
+      text-align: center;
+      padding: 4rem 5%;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1.5rem;
+      background: #1a1a25;
+      border: 1px solid #2d2d44;
+      border-radius: 8px;
+      color: white;
+      transition: border-color 0.3s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #8a2be2;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+    
+    /* Portfolio-specific additions */
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .skill-tag {
+      background: rgba(138, 43, 226, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid #8a2be2;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: #e6e6ff;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">JUJU INTELLIGENCE</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#reports">Reports</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="mobile-menu-btn">☰</button>
+  </header>
+
+  <section class="hero">
+    <h1>AI-Powered Market Intelligence for Elite Investors</h1>
+    <p>Custom institutional-grade reports on tech stocks, real estate yields, and political risk — delivered in 72 hours.</p>
+    <a href="#contact" class="btn">Get Your Custom Report</a>
+  </section>
+
+  <section id="about">
+    <h2>About JUJU Intelligence</h2>
+    <div class="about">
+      <p>JUJU Intelligence combines cutting-edge AI analysis with deep market expertise to deliver actionable insights for institutional investors, hedge funds, and family offices.</p>
+      <div class="skills">
+        <div class="skill-tag">Market Analysis</div>
+        <div class="skill-tag">AI Algorithms</div>
+        <div class="skill-tag">Financial Modeling</div>
+        <div class="skill-tag">Data Visualization</div>
+        <div class="skill-tag">Risk Assessment</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reports">
+    <h2>Sample Reports</h2>
+    <div class="reports">
+      <div class="report-card">
+        <h3>Q3 2025 Top Tech Buys</h3>
+        <p>Based on latest 13F fund flows: CRCL, AMD, NVDA, TSM, ABNB.</p>
+        <a href="#" class="btn" style="font-size:0.9rem; padding:0.6rem 1.2rem;">View Sample</a>
+      </div>
+      <div class="report-card">
+        <h3>AI Impact on Rental Yields (2025–2026)</h3>
+        <p>Top 5 real estate markets with AI-driven demand surges.</p>
+        <a href="#" class="btn" style="font-size:0.9rem; padding:0.6rem 1.2rem;">View Sample</a>
+      </div>
+      <div class="report-card">
+        <h3>2025–2026 Election Business Risk</h3>
+        <p>Policy impacts on tech, energy, and finance sectors.</p>
+        <a href="#" class="btn" style="font-size:0.9rem; padding:0.6rem 1.2rem;">View Sample</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2>Premium Research Packages</h2>
+    <div class="price">$2,500 – $5,000</div>
+    <p>Includes data sourcing, AI analysis, visual charts, and 3 revisions.<br>72-hour delivery. Confidential & white-labeled.</p>
+    <a href="#contact" class="btn">Request a Quote</a>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get Started Today</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Tell me your research needs..."></textarea>
+      <button type="submit" class="btn">Send Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 JUJU INTELLIGENCE. All insights for institutional use only.</p>
+  </footer>
+
+  <script>
+    // Simple form submission handler
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your interest! We will contact you soon.');
+      this.reset();
+    });
+    
+    // Mobile menu toggle (basic implementation)
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>
